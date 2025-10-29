@@ -1,0 +1,9 @@
+@import "tailwindcss";
+body {
+  font-family: "Literata", serif;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
