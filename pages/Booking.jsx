@@ -10,11 +10,12 @@ import InputField from "../src/components/InputField";
 import Select from "../src/components/Select";
 import Address from "../src/components/Address";
 import Button from "../src/components/Button";
+import PaymentInfo from "../src/components/PaymentInfo";
 
 // ICONS
 import { FaPaperPlane } from "react-icons/fa";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Booking = () => {
   // State for event type
@@ -78,6 +79,21 @@ const Booking = () => {
 
   const handleEventCountryChange = (e) => {
     setEventCountry(e.target.value);
+  };
+
+  // TO DISPLAY PAYMENT MESSAGE ON CLICK
+  const messageRef = useRef(null);
+  const overlayRef = useRef(null);
+
+  // Show payment info
+  const displayPaymentInfo = () => {
+    messageRef.current.classList.remove("hidden");
+    overlayRef.current.classList.remove("hidden");
+  };
+  //  close payment information
+  const closePaymentInfo = () => {
+    messageRef.current.classList.add("hidden");
+    overlayRef.current.classList.add("hidden");
   };
 
   return (
@@ -320,6 +336,7 @@ const Booking = () => {
                   className={
                     "flex items-center justify-center gap-4 capitalize text-white bg-[#a68b64] px-4 py-6 w-full rounded-lg cursor-pointer hover:bg-[#b19a76] transition-colors duration-300 ease-in-out leading-5 sm:leading-0"
                   }
+                  onClick={displayPaymentInfo}
                   text={"Send booking request"}
                   icon={<FaPaperPlane />}
                 />
@@ -329,6 +346,11 @@ const Booking = () => {
         </section>
       </main>
       <Footer />
+      <PaymentInfo
+        msgRef={messageRef}
+        overlayRef={overlayRef}
+        onClick={closePaymentInfo}
+      />
     </div>
   );
 };

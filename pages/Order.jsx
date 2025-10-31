@@ -9,11 +9,12 @@ import ImageUpload from "../src/components/ImageUpload";
 import Select from "../src/components/Select";
 import Address from "../src/components/Address";
 import Button from "../src/components/Button";
+import PaymentInfo from "../src/components/PaymentInfo";
 
 // ICONS
 import { FaShoppingCart } from "react-icons/fa";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Order = () => {
   // State for selected size
@@ -51,7 +52,7 @@ const Order = () => {
     setFrame(e.target.value);
   };
 
-  //
+  // STATE FOR FRAME TYPE
   const [frameType, setFrameType] = useState("");
   const frameTypeOption = [
     { value: "Black wood", label: "Black wood" },
@@ -62,6 +63,21 @@ const Order = () => {
 
   const handleFrameTypeChanege = (e) => {
     setFrameType(e.target.value);
+  };
+
+  // TO DISPLAY PAYMENT MESSAGE ON CLICK
+  const messageRef = useRef(null);
+  const overlayRef = useRef(null);
+
+  // Show payment info
+  const displayPaymentInfo = () => {
+    messageRef.current.classList.remove("hidden");
+    overlayRef.current.classList.remove("hidden");
+  };
+//  close payment information
+  const closePaymentInfo = () => {
+    messageRef.current.classList.add("hidden");
+    overlayRef.current.classList.add("hidden");
   };
 
   return (
@@ -178,7 +194,7 @@ const Order = () => {
                   type={"button"}
                   text={"place order"}
                   icon={<FaShoppingCart />}
-                  onClick={""}
+                  onClick={displayPaymentInfo}
                 />
               </div>
             </form>
@@ -186,6 +202,11 @@ const Order = () => {
         </section>
       </main>
       <Footer />
+      <PaymentInfo
+        msgRef={messageRef}
+        overlayRef={overlayRef}
+        onClick={closePaymentInfo}
+      />
     </div>
   );
 };
