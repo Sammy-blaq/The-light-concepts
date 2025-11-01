@@ -54,7 +54,7 @@ const SignIn = () => {
                       password
                     </label>
                     <Link
-                      to="#"
+                      to="/forgot-password"
                       className="capitalize text-[#8a775c] text-[1.4rem] hover:text-[#8a775c]/60 transition-colors duration-300 ease-out"
                     >
                       forgot your password?
