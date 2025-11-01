@@ -1,17 +1,22 @@
-import { Link } from "react-router-dom";
+"use strict";
 
 // ICONS
 import { CiLogin } from "react-icons/ci";
 import { IoIosPersonAdd } from "react-icons/io";
-import { CgProfile } from "react-icons/cg";
+import { IoIosPerson } from "react-icons/io";
 import { IoMdMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
+import { CiLogout } from "react-icons/ci";
+import { CiCamera } from "react-icons/ci";
 
 // COMPONENTS
 import Logo from "./Logo";
 import HeaderButton from "./HeaderButton";
+import Button from "./Button";
+import ProfileBox from "./ProfileBox";
 
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   // For mobile button open and close
@@ -22,6 +27,12 @@ const Header = () => {
 
   const handleMobileClose = () => {
     headerRef.current.classList.toggle("nav-open");
+  };
+
+  // DISPLAY PROFILE COMPONENT WHEN CLICKING THE PROFILE BUTTON
+  const profileComponentRef = useRef(null);
+  const handleProfileButton = () => {
+    profileComponentRef.current.classList.toggle("hidden");
   };
 
   return (
@@ -37,11 +48,8 @@ const Header = () => {
           to="/index"
           className="flex items-center gap-3 text-[#504230] tracking-wide font-bold text-[1.6rem] capitalize lg:hidden"
         >
-          <ion-icon
-            name="camera"
-            className="text-[#8a775c] text-[2.6rem]"
-          ></ion-icon>
-          Pixel Perfect Prints
+          <CiCamera className="text-[#8a775c] text-[2.6rem]" />
+          The Light concepts
         </Link>
         <nav className="flex gap-10 items-center">
           <ul className="flex flex-col text-center gap-12 text-[1.8rem] text-[#8a775c] font-medium lg:flex-row lg:gap-8 lg:text-[1.4rem]">
@@ -77,14 +85,51 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <ul className="hidden">
+
+          {/* TODO 
+          Should be visible from lg: above when user is logged in
+          
+          */}
+          <ul className="hidden relative">
             <li>
-              <Link to="#">
-                <CgProfile className="" />
-              </Link>
+              <Button
+                className={
+                  "flex items-center gap-6 text-[#9c7f5c]  bg-[#e4e4cc] h px-6 py-6 rounded-[50%] hover:bg-[#e4e4cc]/40 transition-colors duration-500 ease-in-out cursor-pointer z-0"
+                }
+                icon={<IoIosPerson className="" />}
+                onClick={handleProfileButton}
+              ></Button>
+              <ProfileBox
+                title={"My Account"}
+                email={"you@example.com"}
+                icon={<CiLogout />}
+                text={"Log out"}
+                ref={profileComponentRef}
+              />
             </li>
           </ul>
         </nav>
+
+        {/* TODO shoud be visible (flex) when the user is logged in and from sm: downward in the mobile nav button */}
+        <ul className="hidden relative flex-col items-center  border-t border-[#ddddb5] w-full ">
+          <li className="">
+            <Link
+              to="/profile"
+              className="flex items-center gap-4 w-full cursor-pointer p-3 rounded-lg hover:bg-[#bdb76b] text-[#504230] m-2 transition-all duration-300 ease-in"
+            >
+              <IoIosPerson /> Profile
+            </Link>
+          </li>
+          <li>
+            <button
+              className={
+                "flex items-center gap-4 w-full cursor-pointer p-3 rounded-lg hover:bg-[#bdb76b] text-[#504230] m-2 transition-all duration-300 ease-in"
+              }
+            >
+              <CiLogout /> Sign Out
+            </button>
+          </li>
+        </ul>
 
         <button
           className="p-8 rounded-2xl w-full text-white bg-[#a68b64] lg:hidden "
