@@ -11,6 +11,7 @@ import Select from "../src/components/Select";
 import Address from "../src/components/Address";
 import Button from "../src/components/Button";
 import PaymentInfo from "../src/components/PaymentInfo";
+import Message from "../src/components/Message";
 
 // ICONS
 import { FaPaperPlane } from "react-icons/fa";
@@ -89,11 +90,23 @@ const Booking = () => {
   const displayPaymentInfo = () => {
     messageRef.current.classList.remove("hidden");
     overlayRef.current.classList.remove("hidden");
+
+    showMessage();
   };
   //  close payment information
   const closePaymentInfo = () => {
     messageRef.current.classList.add("hidden");
     overlayRef.current.classList.add("hidden");
+  };
+
+  // DISPLAY SUCCESS MESSAGE
+  const [visible, setVisible] = useState(false);
+
+  const showMessage = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 5000); // hide after 5 seconds
   };
 
   return (
@@ -351,6 +364,16 @@ const Booking = () => {
         overlayRef={overlayRef}
         onClick={closePaymentInfo}
       />
+
+      {visible && (
+        <Message
+          title={"Booking Request Sent!"}
+          backgroundColor={"bg-[#f5f5db]"}
+          message={
+            "We have recieved your booking request, we will get back to you shortly."
+          }
+        />
+      )}
     </div>
   );
 };

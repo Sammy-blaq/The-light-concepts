@@ -4,7 +4,7 @@ import Overlay from "./Overlay";
 // ICONS
 import { IoMdClose } from "react-icons/io";
 
-const PaymentInfo = ({ msgRef, overlayRef, onClick }) => {
+const PaymentInfo = ({ msgRef, overlayRef, onClick, overlayOnClick }) => {
   return (
     <>
       <div
@@ -46,7 +46,7 @@ const PaymentInfo = ({ msgRef, overlayRef, onClick }) => {
           </div>
         </div>
       </div>
-      <Overlay ref={overlayRef} />
+      <Overlay ref={overlayRef} onClick={overlayOnClick} />
     </>
   );
 };

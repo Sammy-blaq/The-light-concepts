@@ -10,6 +10,7 @@ import Select from "../src/components/Select";
 import Address from "../src/components/Address";
 import Button from "../src/components/Button";
 import PaymentInfo from "../src/components/PaymentInfo";
+import Message from "../src/components/Message";
 
 // ICONS
 import { FaShoppingCart } from "react-icons/fa";
@@ -73,11 +74,22 @@ const Order = () => {
   const displayPaymentInfo = () => {
     messageRef.current.classList.remove("hidden");
     overlayRef.current.classList.remove("hidden");
+    showMessage();
   };
-//  close payment information
+  //  close payment information
   const closePaymentInfo = () => {
     messageRef.current.classList.add("hidden");
     overlayRef.current.classList.add("hidden");
+  };
+
+  // DISPLAY SUCCESS MESSAGE
+  const [visible, setVisible] = useState(false);
+
+  const showMessage = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 3000); // hide after 3 seconds
   };
 
   return (
@@ -206,7 +218,16 @@ const Order = () => {
         msgRef={messageRef}
         overlayRef={overlayRef}
         onClick={closePaymentInfo}
+        overlayOnClick={closePaymentInfo}
       />
+
+      {visible && (
+        <Message
+          title={"Order Placed!"}
+          backgroundColor={"bg-[#f5f5db]"}
+          message={"Your master piece is on the way. Thank you for your order."}
+        />
+      )}
     </div>
   );
 };
