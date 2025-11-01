@@ -4,6 +4,8 @@ import Gallery from "../pages/Gallery.jsx";
 import Order from "../pages/Order.jsx";
 import SignIn from "../pages/SignIn.jsx";
 import SignUp from "../pages/SignUp.jsx";
+import ForgotPassword from "../pages/ForgotPassword.jsx";
+import Profile from "../pages/Profile.jsx";
 
 import {
   createBrowserRouter,
@@ -18,11 +20,13 @@ function App() {
     createRoutesFromElements(
       <Route path="/">
         <Route path="/" element={<Index />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/order" element={<Order />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     )
