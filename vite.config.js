@@ -17,6 +17,10 @@ export default defineConfig({
         headline: ["Literata", "serif"],
         code: ["monospace"],
       },
+      colors: {
+        secondary: "#ededd4",
+        primary: "#a68b64",
+      },
     },
   },
   plugins: [react(), tailwindcss()],
