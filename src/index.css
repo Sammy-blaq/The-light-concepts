@@ -7,3 +7,10 @@ body {
   max-width: 120rem;
   margin: 0 auto;
 }
+
+/* FOCUS */
+*:focus {
+  outline: none;
+
+  box-shadow: 0 0 0 0.4rem rgba(166, 138, 100, 0.4);
+}
