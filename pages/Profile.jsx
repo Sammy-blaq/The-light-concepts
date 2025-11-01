@@ -1,0 +1,75 @@
+"use strict";
+
+// COMPONENTS
+import Header from "../src/components/Header";
+import Footer from "../src/components/Footer";
+import ButtonText from "../src/components/ButtonText";
+import AccountInfo from "../src/components/AccountInfo";
+import Orders from "../src/components/Orders";
+import Bookings from "../src/components/Bookings";
+import Complaint from "../src/components/Complaint";
+
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
+// ICONS
+import { IoIosPerson } from "react-icons/io";
+
+const Profile = () => {
+  // SET AND TRACK THE ACTIVE ACTION BUTTON
+  const [btnActive, setBtnActive] = useState(0);
+  const buttonsText = ["Account", "Order", "Booking", "Complaint"];
+
+  // Content according to active button
+  const content = [<AccountInfo />, <Orders />, <Bookings />, <Complaint />];
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+
+      {/* MAIN CONTENT */}
+      <main className="main-content flex flex-col  flex-1 " id="top">
+        <section className=" pt-20 lg:px-[2.4rem] container">
+          <div className="flex items-center flex-col gap-8 text-center sm:text-left sm:flex-row sm:gap-4 mx-6">
+            <div className="rounded-[50%] w-25 h-25 sm:w-40 sm:h-40 flex items-center justify-center overflow-hidden bg-[#e4e4cc] mr-6">
+              <IoIosPerson className="text-[5rem] text-[#8a775c]" />
+            </div>
+            <div className="flex flex-col gap-10">
+              <h1 className="text-[1.6rem] sm:text-[2.6rem]  text-[#504230] font-bold">
+                Welcome, <span className="font-normal">John Doe...</span>
+              </h1>
+              <p className=" text-[#8a775c]">you@example.com</p>
+            </div>
+          </div>
+        </section>
+        <section className="container pt-24 mx-30">
+          <div className="grid grid-cols-2 gap-4 sm:gap-0 sm:grid-cols-4 bg-[#ededd4] p-4 rounded-xl mb-8 mx-6">
+            {/* iterating throuth the buttonsText to display label and handle state */}
+            {buttonsText.map((label, i) => (
+              <button
+                key={i}
+                onClick={() => setBtnActive(i)}
+                className={`py-5 px-4 rounded transition 
+            ${
+              btnActive === i
+                ? "bg-[#f5f5db] text-[#504230] "
+                : " text-[#8a775c]"
+            }
+          `}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          {/* Dynamic Content */}
+          <div className="bg-[#f7f7e3] py-16 pb-12 px-8 sm:px-12 shadow-md border border-[#ddddb5] rounded-xl mx-6">
+            {content[btnActive]}
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Profile;
