@@ -11,6 +11,8 @@ import { IoMdClose } from "react-icons/io";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useRef, createContext } from "react";
 
+// import { AdminContext } from "../src/context/AdminContext";
+
 export const AdminContext = createContext();
 const Admin = () => {
   // to lacate and render path to outlet
@@ -89,7 +91,7 @@ const Admin = () => {
           </aside>
           {/* MAIN CONTENT */}
           <main className="main-content w-full" id="top">
-            {/* {content[activeLink]} */}
+            {/* outlet for aside bar links component to be rendered dynamically on the page on click */}
             <Outlet />
           </main>
         </div>
