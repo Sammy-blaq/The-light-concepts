@@ -3,7 +3,6 @@
 // COMPONENTS
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
-import Aside from "../src/components/Aside";
 
 // ICONS
 import { IoMdClose } from "react-icons/io";
