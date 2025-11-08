@@ -8,12 +8,12 @@ import { CiLogout } from "react-icons/ci";
 
 const AccountInfo = () => {
   return (
-    <div className="flex flex-col gap-18 text-[#504230]">
+    <div className="flex flex-col gap-18 text-text-foreground">
       <div className="flex flex-col gap-6 sm:gap-10">
         <h1 className="text-[1.8rem] leading-7 sm:text-[2.6rem] capitalize font-bold ">
           Account Information
         </h1>
-        <p className="text-[#8a775c] leading-7 sm:leading-0">
+        <p className="text-muted-foreground leading-7 sm:leading-0">
           Manage your account details and settings.
         </p>
       </div>
@@ -29,7 +29,7 @@ const AccountInfo = () => {
           </p>
         </div>
         <div>
-          <button className="flex items-center gap-4 cursor-pointer p-3 rounded-lg bg-[#f5f5db] px-8 py-6 border border-[#ddddb5] hover:bg-[#bdb76b] text-[#504230] m-2 transition-all duration-300 ease-in capitalize">
+          <button className="flex items-center gap-4 cursor-pointer p-3 rounded-lg bg-background px-8 py-6 border border-border hover:bg-tertiary text-text-foreground m-2 transition-all duration-300 ease-in capitalize">
             <CiLogout className="text-[1.6rem]" /> Sign out
           </button>
         </div>

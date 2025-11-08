@@ -8,7 +8,7 @@ const HeaderButton = ({ onClick }) => {
   return (
     <>
       <button
-        className="btn-mobile-nav p-4 border border-[#d8d8b2] rounded-md cursor-pointer lg:hidden"
+        className="btn-mobile-nav p-4 border border-primary rounded-md cursor-pointer lg:hidden"
         onClick={onClick}
       >
         <IoMdMenu
@@ -16,7 +16,7 @@ const HeaderButton = ({ onClick }) => {
           name="menu-outline"
         />
         <IoMdClose
-          className="icon-mobile-nav hidden group-[.nav-open]/nav:block group-[.nav-open]/nav:border group-[.nav-open]/nav:rounded-md group-[.nav-open]/nav:p-4 group-[.nav-open]/nav:border-[#a68b64] group-[.nav-open]/nav:z-50"
+          className="icon-mobile-nav hidden group-[.nav-open]/nav:block group-[.nav-open]/nav:border group-[.nav-open]/nav:rounded-md group-[.nav-open]/nav:p-4 group-[.nav-open]/nav:border-primary group-[.nav-open]/nav:z-50"
           name="close-outline"
         />
       </button>

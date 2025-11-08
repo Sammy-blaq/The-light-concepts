@@ -52,10 +52,10 @@ const Admin = () => {
           className="flex flex-1 gap-4 w-full h-full group/nav"
         >
           {/* Navigation Aside bar */}
-          <aside className="w-2/3 h-full md:h-auto md:w-[25.6rem] border border-[#ddddb5] pt-12 absolute top-0 left-0 md:relative -translate-x-full md:translate-x-0 transition-all duration-500 ease-in bg-[#f5f5db] opacity-0 pointer-events-none invisible backdrop-blur-sm group-[.nav-open]/nav:opacity-100 group-[.nav-open]/nav:pointer-events-auto group-[.nav-open]/nav:visible group-[.nav-open]/nav:translate-x-0 md:visible md:pointer-events-auto md:opacity-100 z-100">
+          <aside className="w-2/3 h-full md:h-auto md:w-[25.6rem] border border-border pt-12 absolute top-0 left-0 md:relative -translate-x-full md:translate-x-0 transition-all duration-500 ease-in bg-background opacity-0 pointer-events-none invisible backdrop-blur-sm group-[.nav-open]/nav:opacity-100 group-[.nav-open]/nav:pointer-events-auto group-[.nav-open]/nav:visible group-[.nav-open]/nav:translate-x-0 md:visible md:pointer-events-auto md:opacity-100 z-100">
             <div className="flex justify-end w-full md:hiddedn">
               <button
-                className="p-4 border-2 border-[#8a775c] rounded-lg cursor-pointer mx-4 font-bold md:hidden"
+                className="p-4 border-2 border-muted-foreground rounded-lg cursor-pointer mx-4 font-bold md:hidden"
                 onClick={toggleAside}
               >
                 <IoMdClose className="" />
@@ -65,7 +65,7 @@ const Admin = () => {
               Admin Menu
             </h1>
             <nav>
-              <ul className="flex flex-col gap-12 mx-8 text-[#504230]">
+              <ul className="flex flex-col gap-12 mx-8 text-text-foreground">
                 {/* iterating throuth the linkObjects to display the list text, path and handle state */}
                 {linksObjects.map((link, i) => {
                   const isActive = location.pathname === link.path;
@@ -74,10 +74,10 @@ const Admin = () => {
                       <NavLink
                         to={link.path}
                         onClick={handleLinkClick}
-                        className={`hover:text-[#504230] text-3xl ${
+                        className={`hover:text-text-foreground text-3xl ${
                           isActive
-                            ? "font-semibold text-[#504230] border-l-4 border-[#504230] pl-4"
-                            : "hover:text-[#504230]"
+                            ? "font-semibold text-text-foreground border-l-4 border-text-foreground pl-4"
+                            : "hover:text-text-foreground"
                         }`}
                       >
                         {link.text}

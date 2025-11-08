@@ -123,7 +123,7 @@ const Booking = () => {
           <div className="container">
             <form
               action=""
-              className="bg-[#f7f7e3] rounded-lg mx-6 shadow-xl border border-[#ddddb5] mb-20"
+              className="bg-background-accent rounded-lg mx-6 shadow-xl border border-border mb-20"
             >
               <FormHeader
                 title={"Your Information"}
@@ -133,14 +133,14 @@ const Booking = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FieldContainer
                     containerClass={" flex flex-col gap-3 mb-6"}
-                    labelClass={"capitalize text-[#504230] font-medium"}
+                    labelClass={"capitalize text-text-foreground font-medium"}
                     labelFor={"full-name"}
                     title={"Full Name"}
                     inputField={
                       <InputField
                         type={"text"}
                         className={
-                          "flex border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c]"
+                          "flex border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground"
                         }
                         id={"full-name"}
                         placeholder={"John Doe"}
@@ -150,14 +150,14 @@ const Booking = () => {
                   />
                   <FieldContainer
                     containerClass={"flex flex-col gap-3 mb-6"}
-                    labelClass={"capitalize text-[#504230] font-medium"}
+                    labelClass={"capitalize text-text-foreground font-medium"}
                     labelFor={"email"}
                     title={"Email Address"}
                     inputField={
                       <InputField
                         type={"email"}
                         className={
-                          "flex border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c]"
+                          "flex border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground"
                         }
                         id={"email"}
                         placeholder={"you@example.com"}
@@ -168,7 +168,9 @@ const Booking = () => {
                 </div>
                 <FieldContainer
                   containerClass={"flex flex-col mb-6"}
-                  labelClass={"capitalize text-[#504230] font-medium mb-3"}
+                  labelClass={
+                    "capitalize text-text-foreground font-medium mb-3"
+                  }
                   labelFor={"event-type"}
                   title={"Event type"}
                   inputField={
@@ -177,7 +179,7 @@ const Booking = () => {
                       value={event}
                       onChange={handleEventChange}
                       className={
-                        "w-full rounded-lg border border-[#ddddb5] bg-[#f5f5dc] px-4 py-4 text-[1.4rem] mt-4 placeholder:text[#8a775c]"
+                        "w-full rounded-lg border border-border bg-background px-4 py-4 text-[1.4rem] mt-4 placeholder:text-text-foreground"
                       }
                     />
                   }
@@ -186,14 +188,16 @@ const Booking = () => {
                   containerClass={
                     event === "other" ? "flex flex-col mb-6" : "hidden"
                   }
-                  labelClass={"capitalize text-[#504230] font-medium mb-3"}
+                  labelClass={
+                    "capitalize text-text-foreground font-medium mb-3"
+                  }
                   labelFor={"custom-event"}
                   title={"Custom Event type"}
                   inputField={
                     <InputField
                       type={"text"}
                       className={
-                        "flex border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c]"
+                        "flex border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground"
                       }
                       id={"custom-event"}
                       placeholder={"eg., Family Reunion"}
@@ -204,14 +208,16 @@ const Booking = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FieldContainer
                     containerClass={"flex flex-col mb-6"}
-                    labelClass={"capitalize text-[#504230] font-medium mb-3"}
+                    labelClass={
+                      "capitalize text-text-foreground font-medium mb-3"
+                    }
                     labelFor={"start-date"}
                     title={"Event date: From"}
                     inputField={
                       <InputField
                         type={"date"}
                         className={
-                          "flex border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c]"
+                          "flex border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground"
                         }
                         id={"start-date"}
                         placeholder={"Pick a date"}
@@ -222,14 +228,16 @@ const Booking = () => {
                   />
                   <FieldContainer
                     containerClass={"flex flex-col mb-6"}
-                    labelClass={"capitalize text-[#504230] font-medium mb-3"}
+                    labelClass={
+                      "capitalize text-text-foreground font-medium mb-3"
+                    }
                     labelFor={"end-date"}
                     title={"To"}
                     inputField={
                       <InputField
                         type={"date"}
                         className={
-                          "flex border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c]"
+                          "flex border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground"
                         }
                         id={"end-date"}
                         placeholder={"Pick a date"}
@@ -242,14 +250,16 @@ const Booking = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FieldContainer
                     containerClass={"flex flex-col mb-6"}
-                    labelClass={"capitalize text-[#504230] font-medium mb-3"}
+                    labelClass={
+                      "capitalize text-text-foreground font-medium mb-3"
+                    }
                     labelFor={"start-time"}
                     title={"Event time: start"}
                     inputField={
                       <InputField
                         type={"time"}
                         className={
-                          "flex border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c]"
+                          "flex border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground"
                         }
                         id={"start-time"}
                         min={"00:00"}
@@ -259,14 +269,16 @@ const Booking = () => {
                   />
                   <FieldContainer
                     containerClass={"flex flex-col mb-6"}
-                    labelClass={"capitalize text-[#504230] font-medium mb-3"}
+                    labelClass={
+                      "capitalize text-text-foreground font-medium mb-3"
+                    }
                     labelFor={"end-time"}
                     title={"end"}
                     inputField={
                       <InputField
                         type={"time"}
                         className={
-                          "flex border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c]"
+                          "flex border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground"
                         }
                         id={"end-time"}
                         min={"00:00"}
@@ -279,7 +291,9 @@ const Booking = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FieldContainer
                     containerClass={"flex flex-col mb-6"}
-                    labelClass={"capitalize text-[#504230] font-medium mb-3"}
+                    labelClass={
+                      "capitalize text-text-foreground font-medium mb-3"
+                    }
                     labelFor={"country"}
                     title={"Country"}
                     inputField={
@@ -288,7 +302,7 @@ const Booking = () => {
                         value={eventCountry}
                         onChange={handleEventCountryChange}
                         className={
-                          "w-full rounded-lg border border-[#ddddb5] bg-[#f5f5dc] px-4 py-4 text-[1.4rem] mt-4 placeholder:text[#8a775c]"
+                          "w-full rounded-lg border border-border bg-background px-4 py-4 text-[1.4rem] mt-4 placeholder:text-text-foreground"
                         }
                       />
                     }
@@ -296,7 +310,9 @@ const Booking = () => {
                   {eventCountry === "Nigeria" ? (
                     <FieldContainer
                       containerClass={"flex flex-col mb-6"}
-                      labelClass={"capitalize text-[#504230] font-medium mb-3"}
+                      labelClass={
+                        "capitalize text-text-foreground font-medium mb-3"
+                      }
                       labelFor={"state"}
                       title={"State"}
                       inputField={
@@ -305,7 +321,7 @@ const Booking = () => {
                           value={eventState}
                           onChange={handleEventStateChange}
                           className={
-                            "w-full rounded-lg border border-[#ddddb5] bg-[#f5f5dc] px-4 py-4 text-[1.4rem] mt-4 placeholder:text[#8a775c]"
+                            "w-full rounded-lg border border-border bg-background px-4 py-4 text-[1.4rem] mt-4 placeholder:text-text-foreground"
                           }
                         />
                       }
@@ -313,14 +329,16 @@ const Booking = () => {
                   ) : (
                     <FieldContainer
                       containerClass={"flex flex-col mb-6"}
-                      labelClass={"capitalize text-[#504230] font-medium mb-3"}
+                      labelClass={
+                        "capitalize text-text-foreground font-medium mb-3"
+                      }
                       labelFor={"country"}
                       title={"Other Country"}
                       inputField={
                         <InputField
                           type={"text"}
                           className={
-                            "flex border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c]"
+                            "flex border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground"
                           }
                           id={"country"}
                           placeholder={"Enter your Country and State..."}
@@ -332,12 +350,12 @@ const Booking = () => {
                 <Address
                   containerClass={"space-y-2 mt-[2.4rem]"}
                   labelClass={
-                    "capitalize text-[#504230] font-medium mb-3 leading-5 sm:leading-0"
+                    "capitalize text-text-foreground font-medium mb-3 leading-5 sm:leading-0"
                   }
                   title={"event address / location"}
                   htmlFor={"event-address"}
                   textareaClass={
-                    "w-full border border-[#ddddb5] bg-[#f5f5dc] rounded-lg min-h-[10rem] px-[1rem] py-[1rem] text-[1.4rem] mt-[1rem] placeholder:text[#8a775c] placeholder:leading-7 sm:placeholder:leading-0"
+                    "w-full border border-border bg-background rounded-lg min-h-[10rem] px-[1rem] py-[1rem] text-[1.4rem] mt-[1rem] placeholder:text-text-foreground placeholder:leading-7 sm:placeholder:leading-0"
                   }
                   id={"event-address"}
                   placeholder={"Please provide the full venue and address..."}
@@ -347,7 +365,7 @@ const Booking = () => {
                 <Button
                   type={"button"}
                   className={
-                    "flex items-center justify-center gap-4 capitalize text-white bg-[#a68b64] px-4 py-6 w-full rounded-lg cursor-pointer hover:bg-[#b19a76] transition-colors duration-300 ease-in-out leading-5 sm:leading-0"
+                    "flex items-center justify-center gap-4 capitalize text-white bg-primary px-4 py-6 w-full rounded-lg cursor-pointer hover:bg-primary/80 transition-colors duration-300 ease-in-out leading-5 sm:leading-0"
                   }
                   onClick={displayPaymentInfo}
                   text={"Send booking request"}
@@ -368,7 +386,7 @@ const Booking = () => {
       {visible && (
         <Message
           title={"Booking Request Sent!"}
-          backgroundColor={"bg-[#f5f5db]"}
+          backgroundColor={"bg-background"}
           message={
             "We have recieved your booking request, we will get back to you shortly."
           }

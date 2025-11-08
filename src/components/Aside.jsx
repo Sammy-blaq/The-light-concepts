@@ -6,7 +6,7 @@ const Aside = () => {
   return (
     <aside className="w-[25.6rem] border pt-12">
       <nav>
-        <ul className="flex flex-col gap-12 mx-8 text-[#504230]">
+        <ul className="flex flex-col gap-12 mx-8 text-text-foreground">
           <li>
             <Link> Dashboard </Link>
           </li>

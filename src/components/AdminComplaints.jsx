@@ -47,7 +47,7 @@ const AdminComplaints = () => {
           <button
             onClick={toggleAside}
             type="button"
-            className="p-4 border border-[#ddddb5] rounded-lg cursor-pointer"
+            className="p-4 border border-border rounded-lg cursor-pointer"
           >
             <IoMdMenu />
           </button>
@@ -57,20 +57,20 @@ const AdminComplaints = () => {
         <AdminSubHeader
           containerClass={"p-12 flex flex-col gap-2 md:mt-8"}
           title={"All Complaints"}
-          titleClass={"text-4xl font-semibold text-[#504230]"}
+          titleClass={"text-4xl font-semibold text-text-foreground"}
           text={`Review and manage all users submitted complaints.`}
-          textClass={"text-[#8a775c] text-2xl"}
+          textClass={"text-muted-foreground text-2xl"}
         />
         <SearchBar
           placeholder={`Search by customer id ...`}
           className={
-            "border border-[#ddddb5] w-100 sm:w-120 px-14 p-2 md:p-4 md:w-150 md:px-14 rounded-xl"
+            "border border-border w-100 sm:w-120 px-14 p-2 md:p-4 md:w-150 md:px-14 rounded-xl"
           }
           continerClass={`flex items-center`}
           iconClass={`w-10 h-10 translate-x-12`}
         />
       </div>
-      <div className="p-4 pt-0 bg-[#f7f7e3] rounded-xl">
+      <div className="p-4 pt-0 bg-background-accent rounded-xl">
         <div className="relative w-full overflow-auto">
           {complaintsList.map((complaint, index) => (
             <div
@@ -78,14 +78,14 @@ const AdminComplaints = () => {
               onClick={() => {
                 toggleAccordion(index);
               }}
-              className="p-8 flex flex-col gap-12 border-b border-[#ddddb5] cursor-pointer"
+              className="p-8 flex flex-col gap-12 border-b border-border cursor-pointer"
             >
               <div className="flex items-center justify-between">
                 <div className="flex flex-col gap-8 group">
-                  <p className="text-[#504230] leading-7 sm:leading-0">
+                  <p className="text-text-foreground leading-7 sm:leading-0">
                     Complaint from:{complaint.user}
                   </p>
-                  <p className="text-[#8a775c]">{complaint.date}</p>
+                  <p className="text-muted-foreground">{complaint.date}</p>
                 </div>
                 <p>
                   <FaAngleDown
@@ -104,7 +104,7 @@ const AdminComplaints = () => {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className={"text-[#504230] text-2xl"}>{complaint.text}</p>
+                  <p className={"text-text-foreground text-2xl"}>{complaint.text}</p>
                 </div>
               )}
             </div>

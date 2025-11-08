@@ -7,7 +7,7 @@ const ImageUpload = ({ label }) => {
   return (
     <>
       <div className="flex flex-col gap-3">
-        <label for="" class="text-[#504230]">
+        <label for="" class="text-text-foreground">
           {label}
         </label>
         <div class="flex justify-center mt-5 rounded-lg border-2 border-dashed border-gray-300 px-[2.4rem] py-16">
@@ -18,7 +18,7 @@ const ImageUpload = ({ label }) => {
             <div class="mt-6 flex text-sm leading-6 text-gray-600">
               <label
                 for="file-upload"
-                class="relative cursor-pointer rounded-lg font-semibold text-[#9c7f5c] text-2xl focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 hover:text-[#9c7f5c]/80"
+                class="relative cursor-pointer rounded-lg font-semibold text-primary text-2xl focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 hover:text-primary/80"
               >
                 <span>Upload a file</span>
                 <input

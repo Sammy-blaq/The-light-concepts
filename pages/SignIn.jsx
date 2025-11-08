@@ -19,12 +19,12 @@ const SignIn = () => {
         id="top"
       >
         <section className="flex items-center justify-center w-full h-full">
-          <div className="flex flex-col items-center justify-center w-200 mx-6 rounded-lg bg-[#f7f7e3] shadow-xl border border-[#ddddb5]">
+          <div className="flex flex-col items-center justify-center w-200 mx-6 rounded-lg bg-background-accent shadow-xl border border-border">
             <div className="flex flex-col p-[2.4rem] gap-8 text-center my-8">
-              <h1 className="capitalize text-[#504230] text-[3rem] font-bold">
+              <h1 className="capitalize text-text-foreground text-[3rem] font-bold">
                 Sign In
               </h1>
-              <p className="text-[#8a775c] text-[1.4rem] mt-3">
+              <p className="text-muted-foreground text-[1.4rem] mt-3">
                 Access your account and order history.
               </p>
             </div>
@@ -34,13 +34,13 @@ const SignIn = () => {
                 <div className="mb-16">
                   <label
                     for="eamil"
-                    className="capitalize text-[#504230] font-medium"
+                    className="capitalize text-text-foreground font-medium"
                   >
                     Email
                   </label>
                   <input
                     type="email"
-                    className="flex text-[1.4rem] border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c]"
+                    className="flex text-[1.4rem] border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground"
                     placeholder="you@example.com"
                     id="eamil"
                   />
@@ -49,20 +49,20 @@ const SignIn = () => {
                   <div class="flex justify-between items-center">
                     <label
                       for="password"
-                      className="capitalize text-[#504230] font-medium"
+                      className="capitalize text-text-foreground font-medium"
                     >
                       password
                     </label>
                     <Link
                       to="/forgot-password"
-                      className="capitalize text-[#8a775c] text-[1.4rem] hover:text-[#8a775c]/60 transition-colors duration-300 ease-out"
+                      className="capitalize text-muted-foreground text-[1.4rem] hover:text-muted-foreground/60 transition-colors duration-300 ease-out"
                     >
                       forgot your password?
                     </Link>
                   </div>
                   <input
                     type="password"
-                    className="flex text-[1.4rem] border border-[#ddddb5] bg-[#f5f5dc] rounded-lg p-4 w-full mt-4 placeholder:text[#8a775c] "
+                    className="flex text-[1.4rem] border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground "
                     placeholder="********"
                     id="password"
                   />
@@ -77,13 +77,13 @@ const SignIn = () => {
               </form>
               <div className="my-[2.4rem]">
                 <div className="flex items-center justify-center">
-                  <p className="text-[#8a775c]">Or continue with</p>
+                  <p className="text-muted-foreground">Or continue with</p>
                 </div>
-                <div className="flex justify-center items-center mt-16 text-[#8a775c]">
+                <div className="flex justify-center items-center mt-16 text-muted-foreground">
                   <p>Don't have account?</p>
                   <Link
                     to="/sign-up"
-                    className="font-semibold hover:text-[#8a775c]/60 transition-colors duration-300 ease-out focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-6"
+                    className="font-semibold hover:text-muted-foreground/60 transition-colors duration-300 ease-out focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-6"
                   >
                     Sign up
                   </Link>

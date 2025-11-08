@@ -38,21 +38,21 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="main-header h-28 px-4 lg:px-16 group/nav flex items-center justify-between gap-[2.4rem] bg-[#f5f5db] sticky top-0 z-50 w-full shadow-sm"
+      className="main-header h-28 px-4 lg:px-16 group/nav flex items-center justify-between gap-[2.4rem] bg-secondary sticky top-0 z-50 w-full shadow-sm"
     >
       <Logo path="/" />
 
       {/*  Making the mobile nav work  */}
-      <nav className="maim-nav flex flex-col items-center pt-40 absolute top-0 right-0 w-full gap-20 translate-x-full h-dvh px-8 transition-all duration-500 ease-in bg-[#f5f5db] opacity-0 pointer-events-none invisible backdrop-blur-sm group-[.nav-open]/nav:opacity-100 group-[.nav-open]/nav:pointer-events-auto group-[.nav-open]/nav:visible group-[.nav-open]/nav:translate-x-0 lg:visible lg:pointer-events-auto lg:opacity-100 lg:pt-0 lg:p-0 lg:h-auto lg:translate-x-0 lg:w-auto lg:gap-20 lg:flex lg:flex-row lg:items-center lg:justify-between lg:relative z-10">
+      <nav className="maim-nav flex flex-col items-center pt-40 absolute top-0 right-0 w-full gap-20 translate-x-full h-dvh px-8 transition-all duration-500 ease-in bg-secondary opacity-0 pointer-events-none invisible backdrop-blur-sm group-[.nav-open]/nav:opacity-100 group-[.nav-open]/nav:pointer-events-auto group-[.nav-open]/nav:visible group-[.nav-open]/nav:translate-x-0 lg:visible lg:pointer-events-auto lg:opacity-100 lg:pt-0 lg:p-0 lg:h-auto lg:translate-x-0 lg:w-auto lg:gap-20 lg:flex lg:flex-row lg:items-center lg:justify-between lg:relative z-10">
         <Link
           to="/index"
-          className="flex items-center gap-3 text-[#504230] tracking-wide font-bold text-[1.6rem] capitalize lg:hidden"
+          className="flex items-center gap-3 text-text-foreground tracking-wide font-bold text-[1.6rem] capitalize lg:hidden"
         >
-          <CiCamera className="text-[#8a775c] text-[2.6rem]" />
+          <CiCamera className="text-muted-foreground text-[2.6rem]" />
           The Light concepts
         </Link>
         <nav className="flex gap-10 items-center">
-          <ul className="flex flex-col text-center gap-12 text-[1.8rem] text-[#8a775c] font-medium lg:flex-row lg:gap-8 lg:text-[1.4rem]">
+          <ul className="flex flex-col text-center gap-12 text-[1.8rem] text-muted-foreground font-medium lg:flex-row lg:gap-8 lg:text-[1.4rem]">
             <li>
               <Link to="/gallery">Gallery</Link>
             </li>
@@ -64,12 +64,12 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <nav className="flex items-center text-[#8a775c]">
+        <nav className="flex items-center text-muted-foreground">
           <ul className="flex flex-col gap-8 items-center text-[1.8rem] font-medium lg:flex-row lg:text-[1.4rem] lg:gap-4">
             <li>
               <Link
                 to="/sign-in"
-                className="flex items-center gap-6 text-[#504230] px-6 py-4 rounded-lg hover:bg-[#bdb76b] transition-colors duration-500 ease-in-out"
+                className="flex items-center gap-6 text-text-foreground px-6 py-4 rounded-lg hover:bg-tertiary transition-colors duration-500 ease-in-out"
               >
                 <CiLogin className="text-[1.6rem]" />
                 Sign In
@@ -78,7 +78,7 @@ const Header = () => {
             <li>
               <Link
                 to="/sign-up"
-                className="flex items-center gap-6 bg-[#9c7f5c] text-[#f6f4ee] px-6 py-4 rounded-lg hover:bg-[#af9674] transition-colors duration-500 ease-in-out"
+                className="flex items-center gap-6 bg-primary text-white px-6 py-4 rounded-lg hover:bg-primary/80 transition-colors duration-500 ease-in-out"
               >
                 <IoIosPersonAdd className="text-[1.6rem]" />
                 Sign Up
@@ -111,11 +111,11 @@ const Header = () => {
         </nav>
 
         {/* TODO shoud be visible (flex) when the user is logged in and from sm: downward in the mobile nav button */}
-        <ul className="hidden relative flex-col items-center  border-t border-[#ddddb5] w-full ">
+        <ul className="hidden relative flex-col items-center  border-t border-border w-full ">
           <li className="">
             <Link
               to="/profile"
-              className="flex items-center gap-4 w-full cursor-pointer p-3 rounded-lg hover:bg-[#bdb76b] text-[#504230] m-2 transition-all duration-300 ease-in"
+              className="flex items-center gap-4 w-full cursor-pointer p-3 rounded-lg hover:bg-tertiary text-text-foreground m-2 transition-all duration-300 ease-in"
             >
               <IoIosPerson /> Profile
             </Link>
@@ -123,7 +123,7 @@ const Header = () => {
           <li>
             <button
               className={
-                "flex items-center gap-4 w-full cursor-pointer p-3 rounded-lg hover:bg-[#bdb76b] text-[#504230] m-2 transition-all duration-300 ease-in"
+                "flex items-center gap-4 w-full cursor-pointer p-3 rounded-lg hover:bg-tertiary text-text-foreground m-2 transition-all duration-300 ease-in"
               }
             >
               <CiLogout /> Sign Out
@@ -132,7 +132,7 @@ const Header = () => {
         </ul>
 
         <button
-          className="p-8 rounded-2xl w-full text-white bg-[#a68b64] lg:hidden "
+          className="p-8 rounded-2xl w-full text-white bg-primary lg:hidden "
           onClick={handleMobileClose}
         >
           Close
@@ -142,14 +142,14 @@ const Header = () => {
 
       <button
         onClick={handleMobileButton}
-        className="btn-mobile-nav p-4 border border-[#d8d8b2] rounded-md cursor-pointer lg:hidden"
+        className="btn-mobile-nav p-4 border border-primary rounded-md cursor-pointer lg:hidden"
       >
         <IoMdMenu
           className="icon-mobile-nav group-[.nav-open]/nav:hidden"
           name="menu-outline"
         />
         <IoMdClose
-          className="icon-mobile-nav hidden group-[.nav-open]/nav:block group-[.nav-open]/nav:border group-[.nav-open]/nav:rounded-md group-[.nav-open]/nav:p-4 group-[.nav-open]/nav:border-[#a68b64]"
+          className="icon-mobile-nav hidden group-[.nav-open]/nav:block group-[.nav-open]/nav:border group-[.nav-open]/nav:rounded-md group-[.nav-open]/nav:p-4 group-[.nav-open]/nav:border-primary z-9999"
           name="close-outline"
         />
       </button>

@@ -110,7 +110,7 @@ const Order = () => {
             {/* FORM */}
             <form
               action=""
-              className="bg-[#f7f7e3] rounded-lg shadow-xl border border-[#ddddb5] mb-20 mx-6"
+              className="bg-background-accent rounded-lg shadow-xl border border-border mb-20 mx-6"
             >
               <FormHeader
                 title={"Your Order Details"}
@@ -124,7 +124,7 @@ const Order = () => {
                     <div className="flex flex-col gap-3">
                       <label
                         htmlFor="print-size"
-                        className="capitalize text-[#504230] font-medium"
+                        className="capitalize text-text-foreground font-medium"
                       >
                         2. choose size
                       </label>
@@ -135,14 +135,14 @@ const Order = () => {
                         placeholder="Select Size"
                         aria-label="Select Size"
                         className={
-                          "w-full rounded-lg border border-[#ddddb5] bg-[#f5f5dc] px-4 py-4 text-[1.4rem] mt-4"
+                          "w-full rounded-lg border border-border bg-background-accent px-4 py-4 text-[1.4rem] mt-4"
                         }
                       />
                     </div>
                     <div className="pt-4 flex flex-col gap-3">
                       <label
                         htmlFor=""
-                        className="capitalize text-[#504230] font-medium"
+                        className="capitalize text-text-foreground font-medium"
                       >
                         3. select frame
                       </label>
@@ -150,7 +150,7 @@ const Order = () => {
                         options={frameOption}
                         value={frame}
                         onChange={handleFrameChange}
-                        className="w-full rounded-lg border border-[#ddddb5] bg-[#f5f5dc] px-4 py-4 text-[1.4rem] mt-4"
+                        className="w-full rounded-lg border border-border bg-[#f5f5dc] px-4 py-4 text-[1.4rem] mt-4"
                       />
                     </div>
                     <div
@@ -162,7 +162,7 @@ const Order = () => {
                     >
                       <label
                         htmlFor="frame-type"
-                        className="capitalize text-[#504230] font-medium"
+                        className="capitalize text-text-foreground font-medium"
                       >
                         select frame type
                       </label>
@@ -171,7 +171,7 @@ const Order = () => {
                         value={frameType}
                         onChange={handleFrameTypeChanege}
                         className={
-                          "w-full rounded-lg border border-[#ddddb5] bg-[#f5f5dc] px-4 py-4 text-[1.4rem] mt-4"
+                          "w-full rounded-lg border border-border bg-background-accent px-4 py-4 text-[1.4rem] mt-4"
                         }
                         id="frame-type"
                       />
@@ -180,7 +180,7 @@ const Order = () => {
                 </div>
                 <Address
                   containerClass={"mt-20 flex flex-col gap-3"}
-                  labelClass={"capitalize text-[#504230] font-medium"}
+                  labelClass={"capitalize text-text-foreground font-medium"}
                   htmlFor={"address"}
                   title={"4. shipping address"}
                   textareaClass={
@@ -192,16 +192,16 @@ const Order = () => {
               </div>
               <div class="flex justify-between items-center p-[2.4rem] bg-[#f5f5dc]/50 mb-8">
                 <div className="flex flex-col gap-12">
-                  <p class="text-[1.8rem] font-semibold capitalize text-[#504230] leading-5 sm:leading-0">
+                  <p class="text-[1.8rem] font-semibold capitalize text-text-foreground leading-5 sm:leading-0">
                     total price:
                   </p>
-                  <p class="text-[2rem] text-[#a68b64] font-bold text-primary md:text-[3.6rem]">
+                  <p class="text-[2rem] font-bold text-primary md:text-[3.6rem]">
                     ₦0
                   </p>
                 </div>
                 <Button
                   className={
-                    "flex items-center gap-4 text-white capitalize bg-[#a68b64] px-8 py-4 rounded-lg text-[1.6rem] cursor-pointer hover:bg-[#af9674] transition-colors duration-300 ease-in-out leading-5 sm:leading-0"
+                    "flex items-center gap-4 text-white capitalize bg-primary px-8 py-4 rounded-lg text-[1.6rem] cursor-pointer hover:bg-primary/80 transition-colors duration-300 ease-in-out leading-5 sm:leading-0"
                   }
                   type={"button"}
                   text={"place order"}
@@ -224,7 +224,7 @@ const Order = () => {
       {visible && (
         <Message
           title={"Order Placed!"}
-          backgroundColor={"bg-[#f5f5db]"}
+          backgroundColor={"bg-background"}
           message={"Your master piece is on the way. Thank you for your order."}
         />
       )}
