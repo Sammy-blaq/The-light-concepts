@@ -3,7 +3,7 @@
 /* @config "../tailwind.config.js"; */
 
 @theme {
-  --color- primary: #a68b64;
+  --color-primary: #a68b64;
   --color-background: #f5f5db;
   --color-background-accent: #f7f7e3;
   --color-secondary: #ededd4;
