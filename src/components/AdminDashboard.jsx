@@ -3,6 +3,10 @@
 // Components
 import AdminSubHeader from "./AdminSubHeader";
 import OverviewCard from "./OverviewCard";
+import FieldContainer from "./FieldContainer";
+import InputField from "./InputField";
+import ImageUpload from "./ImageUpload";
+import Button from "./Button";
 
 // ICONS
 import { IoMdPeople } from "react-icons/io";
@@ -10,6 +14,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaCalendar } from "react-icons/fa";
 import { BiSolidComment } from "react-icons/bi";
 import { IoMdMenu } from "react-icons/io";
+import { MdOutlineFileUpload } from "react-icons/md";
 
 import { useContext } from "react";
 
@@ -64,6 +69,64 @@ const AdminDashboard = () => {
           icon={<BiSolidComment />}
           number={"12"}
         />
+      </div>
+
+      {/* Image upload */}
+
+      <div className="rounded-lg border border-border bg-background-accent shadow-sm my-8">
+        <AdminSubHeader
+          title={"Upload New Gallery Image"}
+          text={"Add a new image to the main gallery page."}
+          containerClass={"flex-col gap-10 pt-16 hidden md:flex mx-16 my-4"}
+          titleClass={`font-bold text-[2.8rem] text-text-foreground capitalize`}
+          textClass={`text-muted-foreground`}
+        />
+        <div className="p-10 md:p-16 grid md:grid-cols-2 gap-12 items-center w-full">
+          <div>
+            <FieldContainer
+              containerClass={"flex flex-col gap-3 mb-16"}
+              labelClass={"capitalize text-text-foreground font-medium"}
+              labelFor={"image-upload"}
+              title={"Image Title"}
+              inputField={
+                <InputField
+                  type={"text"}
+                  className={
+                    "flex border border-border bg-background rounded-lg p-4 w-full mt-4 placeholder:text-text-foreground placeholder:text-[1.4rem]"
+                  }
+                  id={"image-upload"}
+                  placeholder={"e.g., Beautiful Sunset in Lagos"}
+                  required
+                />
+              }
+            />
+            <div className="flex flex-col gap-3 mb-6">
+              <label
+                htmlFor="image-description"
+                className="text-text-foreground"
+              >
+                Description
+              </label>
+              <textarea
+                id="image-description"
+                className="w-full border border-border bg-background rounded-lg min-h-30 px-4 py-4 text-[1.4rem] mt-4 placeholder:text-text-foreground placeholder:leading-7 sm:placeholder:leading-0"
+                placeholder="A short, captivating description of the image."
+                rows={4}
+              ></textarea>
+            </div>
+          </div>
+
+          <ImageUpload label={"Image File"} />
+        </div>
+        <div className="flex items-center justify-center px-10 md:mx-16">
+          <Button
+            icon={<MdOutlineFileUpload className="text-4xl" />}
+            className={
+              "w-full bg-primary hover:bg-primary/80 rounded-lg py-6 mt-8 flex items-center justify-center gap-4 text-white text-[1.6rem] cursor-pointer transition-all duration-300 ease-in-out my-16"
+            }
+            text={"Add to Gallery"}
+          />
+        </div>
       </div>
 
       <div className="grid gap-12 md:grid-cols-2 mt-12">
