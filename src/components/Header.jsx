@@ -14,6 +14,7 @@ import Logo from "./Logo";
 import HeaderButton from "./HeaderButton";
 import Button from "./Button";
 import ProfileBox from "./ProfileBox";
+import CompanyName from "./CompanyName";
 
 import { useRef } from "react";
 import { Link } from "react-router-dom";
@@ -49,7 +50,7 @@ const Header = () => {
           className="flex items-center gap-3 text-text-foreground tracking-wide font-bold text-[1.6rem] capitalize lg:hidden"
         >
           <CiCamera className="text-muted-foreground text-[2.6rem]" />
-          The Light concepts
+          <CompanyName />
         </Link>
         <nav className="flex gap-10 items-center">
           <ul className="flex flex-col text-center gap-12 text-[1.8rem] text-muted-foreground font-medium lg:flex-row lg:gap-8 lg:text-[1.4rem]">

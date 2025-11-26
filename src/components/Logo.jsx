@@ -1,5 +1,6 @@
-I'mimport { CiCamera } from "react-icons/ci";
+import { CiCamera } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import CompanyName from "./CompanyName";
 
 const Logo = ({ path }) => {
   return (
@@ -8,7 +9,7 @@ const Logo = ({ path }) => {
       className="flex items-center gap-3 text-text-foreground tracking-wide font-bold text-[1.4rem] sm:text-[1.8rem] lg:text-[2rem] capitalize leading-5 sm:leading-0"
     >
       <CiCamera className="text-muted-foreground text-[2rem] sm:text-[2.6rem]" />
-      NERIAH - The Light of God
+      <CompanyName />
     </Link>
   );
 };
