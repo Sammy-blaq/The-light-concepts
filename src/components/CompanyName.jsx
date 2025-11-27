@@ -1,7 +1,7 @@
 "use strict";
 
 const CompanyName = () => {
-  const companyName = `NERIAH - Campure Life's Precious Moments`;
+  const companyName = `NERIAH - Capture Life's Precious Moments`;
   return <>{companyName}</>;
 };
 
